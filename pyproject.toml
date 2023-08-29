@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "datapractice"
+version = "0.1.0"
+description = ""
+authors = ["Chris Peterson <cdpeters1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jupyterlab = "^4.0.5"
+pandas = "^2.0.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+blacken-docs = "^1.16.0"
+interrogate = "^1.5.0"
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+mypy = "^1.5.1"
+nbqa = "^1.7.0"
+pre-commit = "^3.3.3"
+sphinx = "^7.2.4"
+docrepr = "^0.2.0"
+flake8-docstrings = "^1.7.0"
+
+[tool.black]
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+
+[tool.interrogate]
+ignore-init-module = true
+fail-under = 100
+verbose = 1
+exclude = ["*.ipynb_checkpoints*"]
+
+[tool.mypy]
+python_version = "3.11"
+
+[tool.nbqa.addopts]
+flake8 = [
+    "--extend-ignore=D100"
+]
+interrogate = [
+    "--ignore-module"
+]
+
+[tool.nbqa.md]
+blacken-docs = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

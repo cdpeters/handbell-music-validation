@@ -1,0 +1,5 @@
+name: datapractice
+channels:
+  - defaults
+dependencies:
+  - python=3.11
